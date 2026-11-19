@@ -41,5 +41,9 @@ python3 device/google/coral/faceunlock/tools/apply_framework_fixes.py --apply
 python3 vendor/google/coral/camera/tools/prepare_camera.py --check-hashes
 
 source build/envsetup.sh
+if [[ "${AXION_GENERATE_KEYS:-0}" == "1" ]]; then
+  # Axion recommends gk -s once for private release signing keys.
+  gk -s
+fi
 axion coral "$AXION_BUILD_VARIANT" "$AXION_GMS_VARIANT"
 ax -br -j"$AXION_BUILD_JOBS"
