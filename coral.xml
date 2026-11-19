@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="hecker-axion" fetch="https://github.com/its-hecker" />
+  <remote name="hecker-lineage" fetch="https://github.com/LineageOS" />
+
+  <project name="axion-cnb-coral-dt" path="device/google/coral"
+           remote="hecker-axion" revision="cnb-android17-prep" />
+  <project name="axion-cnb-coral-vendor" path="vendor/google/coral"
+           remote="hecker-axion" revision="cnb-android17-prep" />
+  <project name="axion-cnb-coral-kernel" path="kernel/google/msm-4.14"
+           remote="hecker-axion" revision="cnb-android17-prep" />
+
+  <!-- Required by existing coral device VINTF and Dolby configuration. -->
+  <project name="vendor_lunaris_dolby" path="vendor/lunaris/dolby"
+           remote="hecker-axion" revision="main" />
+
+  <!-- Matches the LineageOS 24.0 dependency of the EvoX coral base. -->
+  <project name="android_packages_apps_ElmyraService"
+           path="packages/apps/ElmyraService" remote="hecker-lineage"
+           revision="lineage-24.0" />
+</manifest>
