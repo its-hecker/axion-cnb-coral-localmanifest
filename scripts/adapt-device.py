@@ -3,7 +3,8 @@
 from pathlib import Path
 import re
 
-root = Path(__file__).resolve().parents[2] / "device/google/coral"
+cwd = Path.cwd()
+root = cwd if (cwd / "lineage_coral.mk").is_file() else cwd / "device/google/coral"
 if not root.is_dir():
     raise SystemExit("Expected device/google/coral; run from an Android source checkout")
 
